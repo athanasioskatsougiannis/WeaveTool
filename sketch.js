@@ -14,7 +14,7 @@ function setup() {
 
   uploadButton = createFileInput(handleFile); // create a file input button
   uploadButton.attribute('multiple', 'true'); // allow users to upload multiple files
-  uploadButton.position(140, 10); // position the button on the canvas
+  uploadButton.position(70, 10); // position the button on the canvas
 
   saveButton = createButton('Save'); // create a button to save the final outcome
   saveButton.position(10, 10); // position the button on the canvas
