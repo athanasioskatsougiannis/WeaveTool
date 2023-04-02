@@ -20,7 +20,7 @@ function setup() {
   // saveButton.position(10, 10); // position the button on the canvas
   // saveButton.mousePressed(saveImageOrVideo); // set the saveImageOrVideo function to be called when the button is pressed
   
-  frameRate(1);
+  frameRate(0.5);
 }
 
 function draw() {
