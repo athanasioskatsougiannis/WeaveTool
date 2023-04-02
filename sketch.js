@@ -14,11 +14,11 @@ function setup() {
 
   uploadButton = createFileInput(handleFile); // create a file input button
   uploadButton.attribute('multiple', 'true'); // allow users to upload multiple files
-  uploadButton.position(70, 10); // position the button on the canvas
+  uploadButton.position(10, 10); // position the button on the canvas
 
-  saveButton = createButton('Save'); // create a button to save the final outcome
-  saveButton.position(10, 10); // position the button on the canvas
-  saveButton.mousePressed(saveImageOrVideo); // set the saveImageOrVideo function to be called when the button is pressed
+  // saveButton = createButton('Save'); // create a button to save the final outcome
+  // saveButton.position(10, 10); // position the button on the canvas
+  // saveButton.mousePressed(saveImageOrVideo); // set the saveImageOrVideo function to be called when the button is pressed
   
   frameRate(1);
 }
@@ -28,7 +28,7 @@ function draw() {
   
   if (images.length > 0) { // if there are images uploaded
     let tileSize = mouseX; // set the size of each tile
-    for (let y = 100; y < height; y += tileSize) { // loop through rows of tiles
+    for (let y = 50; y < height; y += tileSize) { // loop through rows of tiles
       for (let x = 0; x < width; x += tileSize) { // loop through columns of tiles
         let img = random(images); // select a random image from the array
         let sx = floor(random(img.width - tileSize)); // select a random starting x position
@@ -53,6 +53,13 @@ function handleFile(file) {
   }
 }
 
+function keyPressed() {
+
+  // If you hit the s key, save an image
+  if (key === 's' || key === 'S') {
+    saveImageOrVideo();
+  }
+}
 
 
 function saveImageOrVideo() {
@@ -67,7 +74,7 @@ function saveImageOrVideo() {
       isCapturing = true; // set the boolean flag to true
     } else { // otherwise
       extension = '.jpg'; // set the file extension to JPEG
-      saveCanvas('mosaic-' + timestamp, 'jpg');
+      saveCanvas('DataWeaving-' + timestamp, 'jpg');
                  }   
   }
 }
